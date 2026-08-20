@@ -1,13 +1,13 @@
 {% set name = "opentelemetry-propagator-gcp" %}
-{% set version = "1.14.0" %}
+{% set version = "1.15.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 2d677ec5f0be296a25822a2011b1a5f74ba95c9635b7162f36bd376423b5a943
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: b5066851d55be13344985c895ea5f07809226c21de821d864e7ce60602487663
 
 build:
   noarch: python
@@ -21,7 +21,7 @@ requirements:
     - setuptools
   run:
     - python >={{ python_min }}
-    - opentelemetry-api >=1.0,<2.dev0
+    - opentelemetry-api ~=1.0
 
 test:
   imports:
